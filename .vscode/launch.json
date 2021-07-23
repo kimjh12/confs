@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "g++ - Build and debug active file",
+      "type": "cppdbg",
+      "request": "launch",
+      // "program": "${fileDirname}/${fileBasenameNoExtension}",
+      // "program": "~/workspace/nnstreamer/build/tests/unittest_common",
+      "program": "/usr/bin/gst-launch-1.0",
+      "args": [],
+      "stopAtEntry": false,
+      // "cwd": "${workspaceFolder}",
+      "environment": [{"name": "GST_DEBUG", "value" :"3"}],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "install nnstreamer",
+      "miDebuggerPath": "/usr/bin/gdb"
+    }
+  ]
+}
